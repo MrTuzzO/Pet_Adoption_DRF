@@ -1,0 +1,21 @@
+<!-- templates/account/email_confirm.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Email Address</title>
+</head>
+<body>
+    <h1>Debug: Template Loaded Successfully</h1>
+    {% if confirmation %}
+        <p>Please confirm that <a href="mailto:{{ confirmation.email_address.email }}">{{ confirmation.email_address.email }}</a> is your email address.</p>
+        <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+            {% csrf_token %}
+            <button type="submit">Confirm</button>
+        </form>
+    {% else %}
+        <p>This email confirmation link has expired or is invalid. Please <a href="{% url 'account_email' %}">request a new confirmation link</a>.</p>
+    {% endif %}
+</body>
+</html>

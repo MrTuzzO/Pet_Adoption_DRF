@@ -1,0 +1,8 @@
+<!-- templates/account/email_confirmation_message.txt -->
+Welcome to PetAdoption_v2!
+
+Please confirm your email address by clicking the link below:
+
+{{ activate_url }}
+
+Thank you!
