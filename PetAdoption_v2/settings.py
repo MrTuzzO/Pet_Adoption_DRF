@@ -32,6 +32,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:5500',
     'https://mrtuzzo.github.io/',
     'http://127.0.0.1',
+    'https://pet-adoption-drf.onrender.com',
 ]
 
 CORS_ORIGIN_WHITELIST = (
